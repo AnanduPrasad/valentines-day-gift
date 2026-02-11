@@ -205,6 +205,10 @@ function showFinal() {
     if (current) current.classList.remove('active');
 
     document.getElementById('finalMessage').classList.add('show');
+    
+    // Hide the back button at top when final message is shown
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) backBtn.style.display = 'none';
 }
 </script>
 
