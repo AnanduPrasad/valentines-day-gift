@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine? 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-content">
+            <h1 id="mainTitle">Will you be mine? 💕</h1>
+            <p class="subtitle">Life is an incredible journey and I want to spend every single second of it with you.</p>
+
+            <div class="button-container">
+                <button class="btn btn-yes" id="yesBtn" onclick="handleYes()">Yes 💖</button>
+                <button class="btn btn-no" id="noBtn" onclick="handleNo()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let noClickCount = 0;
+
+        function handleYes() {
+            // Animate button
+            const yesBtn = document.getElementById('yesBtn');
+            yesBtn.style.transform = 'scale(0.9)';
+
+            setTimeout(() => {
+                window.location.href = 'valentine.html';
+            }, 200);
+        }
+
+        function handleNo() {
+            noClickCount++;
+            const title = document.getElementById('mainTitle');
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+
+            if (noClickCount === 1) {
+                title.textContent = 'Are you sure? 🥺';
+                yesBtn.classList.add('btn-grow-1');
+            } else if (noClickCount === 2) {
+                title.textContent = 'Think again 💭';
+                yesBtn.classList.remove('btn-grow-1');
+                yesBtn.classList.add('btn-grow-2');
+            } else if (noClickCount >= 3) {
+                title.textContent = 'You have only one option 😊';
+                yesBtn.classList.remove('btn-grow-2');
+                yesBtn.classList.add('btn-grow-3');
+                noBtn.classList.add('btn-hidden');
+            }
+        }
+    </script>
+</body>
+</html>
