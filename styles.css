@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 :root {
     --primary-pink: #ff69b4;
     --secondary-pink: #ffb6d9;
@@ -26,6 +31,7 @@ body {
     min-height: 100vh;
     color: var(--text-dark);
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* ==========================================
@@ -35,17 +41,21 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .page-content {
     text-align: center;
     animation: fadeInUp 0.8s ease-out;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* ==========================================
@@ -53,16 +63,18 @@ body {
    ========================================== */
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: var(--red);
     margin-bottom: 20px;
     animation: heartPulse 2s ease-in-out infinite;
+    word-break: break-word;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary-pink);
     margin-bottom: 15px;
+    word-break: break-word;
 }
 
 .subtitle {
@@ -90,18 +102,19 @@ h2 {
    ========================================== */
 
 .btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
+    padding: 12px 30px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow);
-    margin: 10px;
+    margin: 8px;
     display: inline-block;
     text-decoration: none;
     color: white;
+    min-width: 120px;
 }
 
 .btn-yes {
@@ -152,9 +165,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 30px;
     flex-wrap: wrap;
+    padding: 0 10px;
 }
 
 /* ==========================================
@@ -163,21 +177,24 @@ h2 {
 
 .gifts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
     max-width: 900px;
+    width: 100%;
+    padding: 0 10px;
 }
 
 .gift-box {
     background: white;
-    padding: 40px 20px;
-    border-radius: 20px;
+    padding: 30px 20px;
+    border-radius: 15px;
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     color: var(--text-dark);
+    width: 100%;
 }
 
 .gift-box:hover, .gift-box:active {
@@ -186,14 +203,15 @@ h2 {
 }
 
 .gift-icon {
-    font-size: 4rem;
+    font-size: 3rem;
     animation: bounce 2s ease-in-out infinite;
 }
 
 .gift-box h3 {
-    margin-top: 20px;
+    margin-top: 15px;
     color: var(--primary-pink);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    word-break: break-word;
 }
 
 /* ==========================================
@@ -202,12 +220,14 @@ h2 {
 
 .quiz-container {
     background: white;
-    padding: 40px;
-    border-radius: 25px;
+    padding: 25px;
+    border-radius: 20px;
     box-shadow: 0 8px 30px rgba(255, 105, 180, 0.3);
     max-width: 600px;
-    margin: 30px auto;
+    margin: 20px auto;
+    width: 100%;
     animation: fadeInUp 0.5s ease-out;
+    box-sizing: border-box;
 }
 
 .question {
@@ -318,16 +338,18 @@ h2 {
 
 .letter-container {
     background: #fff5f0;
-    padding: 50px 40px;
+    padding: 30px 20px;
     border-radius: 10px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     max-width: 700px;
     margin: 30px auto;
+    width: 100%;
     font-family: 'Georgia', serif;
-    line-height: 2;
+    line-height: 1.8;
     color: var(--text-dark);
     position: relative;
     animation: fadeInUp 0.8s ease-out;
+    box-sizing: border-box;
 }
 
 .letter-container::before {
@@ -341,9 +363,9 @@ h2 {
 }
 
 .letter-content {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .letter-content p {
@@ -375,9 +397,10 @@ h2 {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 15px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .photo-item {
@@ -397,7 +420,7 @@ h2 {
 
 .photo-item img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -426,12 +449,14 @@ h2 {
 
 .film-strip-wrapper {
     background: #1a1a1a;
-    padding: 30px 20px;
-    margin: 30px 0;
+    padding: 20px 15px;
+    margin: 20px auto;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Film perforations on top and bottom */
@@ -464,8 +489,9 @@ h2 {
 
 .film-strip-container {
     position: relative;
-    height: 250px;
+    height: 180px;
     overflow: hidden;
+    width: 100%;
 }
 
 .film-strip {
@@ -482,10 +508,10 @@ h2 {
 
 .film-frame {
     flex-shrink: 0;
-    width: 220px;
-    height: 220px;
+    width: 160px;
+    height: 160px;
     background: white;
-    border: 8px solid #2a2a2a;
+    border: 6px solid #2a2a2a;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -537,7 +563,7 @@ h2 {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-240px * 4)); /* Adjust based on number of frames */
+        transform: translateX(calc(-180px * 4)); /* Adjust based on number of frames */
     }
 }
 
@@ -566,10 +592,13 @@ h2 {
 
 .collage-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 30px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 30px auto;
     max-width: 900px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .collage-item {
@@ -606,13 +635,15 @@ h2 {
 
 .forever-text {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
-    margin: 40px auto;
+    margin: 30px auto;
     max-width: 700px;
-    line-height: 2;
-    font-size: 1.1rem;
+    width: 100%;
+    line-height: 1.8;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .forever-text p {
@@ -625,12 +656,14 @@ h2 {
 
 .bonus-container {
     background: white;
-    padding: 60px 40px;
-    border-radius: 25px;
+    padding: 30px 20px;
+    border-radius: 20px;
     box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
     max-width: 600px;
     margin: 30px auto;
+    width: 100%;
     animation: fadeInUp 0.8s ease-out;
+    box-sizing: border-box;
 }
 
 .bonus-text {
@@ -714,17 +747,45 @@ h2 {
 /* Mobile First - Base styles above are mobile */
 
 /* Tablets */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 
     .subtitle {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+    }
+
+    .gifts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collage-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
     }
 
     .gifts-grid {
@@ -739,11 +800,17 @@ h2 {
 /* Desktop */
 @media (min-width: 1024px) {
     h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .container {
+        padding: 20px;
     }
 
     .gifts-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 0;
     }
 
     .photo-grid {
@@ -752,17 +819,79 @@ h2 {
 
     .collage-container {
         grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        padding: 0;
+    }
+
+    .btn {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+
+    .quiz-container {
+        padding: 40px;
+    }
+
+    .letter-container {
+        padding: 50px 40px;
+        line-height: 2;
+        font-size: 1.1rem;
+    }
+
+    .letter-content {
+        font-size: 1.1rem;
+        margin: 30px 0;
+    }
+
+    .forever-text {
+        padding: 40px;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+
+    .bonus-container {
+        padding: 60px 40px;
     }
 }
 
 /* Mobile adjustments for film strip */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+    .film-strip-wrapper {
+        padding: 15px 10px;
+        margin: 15px auto;
+    }
+
     .film-strip-container {
-        height: 200px;
+        height: 160px;
     }
     
     .film-frame {
-        width: 180px;
+        width: 140px;
+        height: 140px;
+        border: 4px solid #2a2a2a;
+    }
+    
+    @keyframes filmScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-160px * 4));
+        }
+    }
+    
+    .camera-counter {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .film-strip-container {
+        height: 180px;
+    }
+    
+    .film-frame {
+        width: 160px;
         height: 180px;
     }
     
